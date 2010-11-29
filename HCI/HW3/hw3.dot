@@ -1,0 +1,38 @@
+digraph HW3 {
+    compound=true;
+    ranksep=0.65;
+    labelloc=t;
+    label="Online Medication Ordering System";
+    epsilon=0.1;
+
+    edge [arrowsize=1, color=black];
+
+    Auth_user [label="Authenticate user \nas a doctor or nurse"];
+    Sel_order [label="Select prescription \nto order"];
+    Send_order [label="Send order and \nclinic information"];
+    chat [label="Chat with drug rep"];
+    FDA [label="Confirm clinic \nwith FDA"];
+    Place_order [label="Place drug order"];
+    Confirm [label="Confirm order"];
+    Sus_order [label="Suspend order"];
+    Offline [label="Resolve offline"];
+
+
+    Auth_user -> Auth_user [label="Not a doctor \nor nurse"];
+    Auth_user -> Sel_order [label="Is a doctor \nor nurse"];
+    Sel_order -> Auth_user [label="No order is selected"];
+    Sel_order -> Send_order [label="Order is selected \nand sent"];
+    Send_order -> chat [label="Invalid order \nor information"];
+    Send_order -> FDA [label="Valid order \nand information" ];
+
+    FDA -> chat [label="Unable to authorize \nwith FDA"];
+    FDA -> Place_order [label="Authorized with FDA"];
+    Place_order -> Confirm [label="Order was placed"];
+    Place_order -> chat [label="Failed to \nplace order"];
+
+    chat -> Sus_order [label="Failed to \nresolved problem"];
+    chat -> Place_order [label="Problem resolved"];
+    Sus_order -> Offline;
+
+}
+
