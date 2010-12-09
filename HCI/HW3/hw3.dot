@@ -7,11 +7,11 @@ digraph HW3 {
 
     edge [arrowsize=1, color=black];
 
-    Auth_user [label="Authenticate user \nas a doctor or nurse"];
-    Sel_order [label="Select prescription \nto order"];
-    Send_order [label="Send order and \nclinic information"];
-    chat [label="Chat with drug rep"];
-    FDA [label="Confirm clinic \nwith FDA"];
+    Auth_user [label="Login Screen"];
+    Sel_order [label="Prescription Order Form"];
+    Send_order [label="Drug company \nconfirm received order"];
+    chat [label="Drug rep chat"];
+    FDA [label="Confirm clinic with FDA"];
     Place_order [label="Place drug order"];
     Confirm [label="Confirm order"];
     Sus_order [label="Suspend order"];

@@ -1,0 +1,8 @@
+#include "MedMedMain.h"
+
+MedMedMain::MedMedMain( wxWindow* parent )
+:
+MedMain( parent )
+{
+
+}
