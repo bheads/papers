@@ -1,0 +1,81 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+
+%opening
+\title{Small Business Storage Management and Gate Control System}
+\author{Byron Heads \\
+		E00062946}
+
+\begin{document}
+
+\maketitle
+%\begin{abstract}
+%Project parts 1, 2, and 3.
+%\end{abstract}
+
+\paragraph*{}
+A modern storage facility can have several hundred clients.  To track client information, payments,
+and to give secure and convent access to their storage requires several key software components.
+This system will have a site manager, and customer as its primary user base.  The storage facility's
+customer, known as the renter, will have access to the Gate Input Interface.  The site manager will 
+will be access the Renter Database, Payment System, and Gate Control System.  These systems maybe
+accessed separately, but are all integrated in the main programs database.
+
+The Gate Input Interface consists of two identical keypads with a small LCD screen, and the main 
+access gate.  A keypad is located on each side of the gate.  The bottom of the keypad is 41-45 inches
+from the road surface, this the same height as residential mailboxes.  The distance from the gate
+is roughly 5-8 feet.  The renter pulls up next to the keypad and enters a seven digit code.  The code
+is displayed on screen as its typed.  The screen is automatically cleared after two minutes of inactivity.
+After the renter enters their code the press the accept key.  The screen will either display a welcome
+message followed by the gate opening, or the screen displays "Invalid Code".  Five invalid codes cause
+the keypad to lockout for two minutes to discourage code guessing.  Renters that have not paid their
+rent are locked up, and the screen displays "See Manager". All code entries are logged in the Gate 
+Control System database.
+
+The Renter Database is where the site manager will spend most of their time using.  The database is tracks
+all renter information.  This includes renter contact information, units rented, payment due dates, rental
+rates, and any other collected notes on the renter.  The manager can search with the renter search screen.
+This screen allows the manager to search by name, unit numbers, or a generic search.  The screen will
+return a list of search results with links to the resulting renter record.
+
+Payments are applied through the Payment System, and can be accessed via two different methods.  First
+is in the Payment System.  The manager selects apply payment, then uses the renter search screen to 
+select the user to apply a payment to.  If a valid renter is selected, the manager is taken to the payment
+screen.  The manager then selects the payment method, amount, and date to issue the payment.  The system
+uses the last payment method that the renter used.  The payment amount is calculated from the the issue
+payment date using the renters agreed rate.  This gives the manager the ability to prorate payments.
+Payments are applied to the renters account, and their paid up to date is adjusted.  If the renter had
+been locked out and is now paid up, the lockout will be removed.  The Payment System is also used to
+produce reports on renters that are behind on payments, or have a payment coming out.  The global 
+settings for renter lockout is adjusted at this screen.  Lockout rules can be set for individual renters
+under the Renter Database screen's advanced tab.
+ 
+The Gate Control System is used to set the gate settings.  Most gate settings are global and can be
+adjusted per user in the Renter Database advanced tab.  From this system the manager can control the
+gate access times, and the gate access log.  The time setting is used to limit access to the facility 
+while its closed.  The gate log displays all user access to the keypads.    
+
+Within the storage management system there are two users.  The renter, and the manager.  Both users
+have very different usability domains and goals.  The renter is the managers customer, and is assumed
+to have little to no experience with using computers, or security systems.  To deal with this the keypad 
+interface was modeled after a telephone keypad.  The use of this common interface gives the renter a 
+familiar interface that most renters should have experience and knowledge with using.  The purpose of 
+the interface is to give the renter access to the facility without risking site security.  Speed of
+access to the site will also be important to the renter.     
+
+The manager will be a moderate to advanced user.  The manager will be using the system every day, and
+for all transactions.  The manager is expected to be an expert in storage facility management.  This 
+includes tracking renters, payments, security, and customer service.  The goal of the computer system
+is to assist with these activities, and provide security that is more time consuming then paper records.
+
+
+
+Many of these storage facilities are small business run by a single owner.  These organizations have
+simple but demanding goals.  Providing quality service through fast and accurate records, being able 
+to correctly and timely bill customers, and provide fast and simple security is a must for such an
+organization.  Many of these business are to small to have their own accounting department, and relies
+on external accounting firms.  Being about to export data to a format that can be used by the customers
+accounting firm is a requirement of the organization.  
+ 
+\end{document}
+
