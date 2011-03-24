@@ -1,0 +1,310 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage{color}
+\usepackage{listings}
+\lstset{ %
+language=C,                % choose the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,           % adds a frame around the code
+tabsize=4,          % sets default tabsize to 2 spaces
+captionpos=b,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%}{)}          % if you want to add a comment within your code
+}
+
+
+\begin{document}
+
+\section*{Proposed Class}
+C Programming
+
+\section*{Requirements}
+COSC 311
+
+\section*{Why Do We Need This Class}
+In the current computer science curriculum programming classes are based around high-level object orientated programming.  Many students do not have access to a low-level non object-orientated programming language such as C.  Our curriculum focuses on using languages like Java and Python which do not require students to handle memory management or pointer arithmetic.  A class is needed to help fill this void in our curriculum.
+
+\section*{Class Purpose}
+Introduce students to C programming concepts, tools, libraries, and the importance if C in the realm of computers and computer science.  Students will be able to read and develop C programs, understand how to use and implement libraries, have an understanding of program and memory structure, have the ability to implement common data structures and an understanding of pointer arithmetic.  Three large projects will be used to teach C programming semantics and constructs in a non-object orientated environment while targeting common C programming problems.  Focus will be placed on efficient and reusable code, while fostering a deeper understanding of program memory and instruction flow.  
+
+\section*{Target Students}
+Students capable of implementing common data structures and algorithms in other languages but want to learn or get practice in C and low level programming.  Many students in the department already come asking me for advice and tutoring in C and C++ and several have expressed interest in a class such as the one I am proposing.  I wish to make this class available to undergraduate and graduate students.
+
+\section*{What I Want To Get Out Of This Class}
+I want to continue to build my experience and knowledge of education.  I have been programming in C over the last seven years, and I want to pass on that knowledge to others so that they have a more rounded education and experience in real-world tools. 
+
+
+\section*{Grading}
+Grades are based on five categories
+
+\begin{tabular}{l l}
+20\% & Lab Assignments \\
+20\% & String Library Project \\
+20\% & INI Reader Library Projects \\
+20\% & File Packer Project \\
+20\% & Final 
+\end{tabular}
+
+\section*{Lab Assignments}
+Lab assignments are given at the start of each week and are due Friday at midnight via e-mail.  Lab assignments are small projects based on weekly lecture topics.  Lab assignments are worth 8pts with 12 total assignments.  Assignments lose 1pt each week they are late and must be turned in no later then the final.
+
+\section*{Projects}
+Three large projects will be assigned during the semester. These projects can be worked on alone or in pairs.  These projects combine the skills taught in class and practiced in lab assignments.  Ech projects is worth $1/5$ of the students grade.  Projects will be due two weeks after they are given.  Late projects will lose 5pts each week they are late and must be turned in no later then the final.
+\subsubsection*{Groups}
+The three large projects can be worked on in groups of two or one group of three if there are an odd number of students.  Each member of a group must turn in a minimum one page write up of their contribution to the project.
+\subsubsection*{Graduate Students}
+Graduate students are expected to complete all optional problems.
+
+\section*{Class Topics Plan}
+List of topics and assignments planned for each week.
+
+\subsubsection*{Week 1}
+\begin{itemize}
+\item History of C
+\item Why is C still important
+\item "Hello world" program
+\item C programming tool chain
+\item Command line overview
+\item Makefiles and CMake
+\item C syntax and semantics
+\item Data types
+\item Constructs
+\end{itemize}
+
+\subsubsection*{Week 2}
+\begin{itemize}
+\item Functions
+\item C standard library
+\end{itemize}
+
+\subsubsection*{Week 3}
+\begin{itemize}
+\item Macros
+\item Header files
+\item Dealing with the data type size issue stdtype.h
+\item assert, enforce, and errors
+\item unit testing
+\item Static arrays
+\end{itemize}
+
+\subsubsection*{Week 4}
+\begin{itemize}
+\item Intro to pointers
+\item Malloc, calloc, realloc, and free
+\end{itemize}
+
+\subsubsection*{Week 5}
+\begin{itemize}
+\item Dynamic arrays
+\item Pointer arithmetic
+\end{itemize}
+
+\subsubsection*{Week 6}
+\begin{itemize}
+\item Memory Leaks, dangling pointer
+\item Memory management 
+\end{itemize}
+
+\subsubsection*{Week 7}
+\begin{itemize}
+\item Strings
+\item String conversions
+\end{itemize}
+
+\subsubsection*{Week 8}
+\begin{itemize}
+\item Libraries
+\item Start String Library Project
+\end{itemize}
+
+\subsubsection*{Week 9}
+\begin{itemize}
+\item String Library Project
+\end{itemize}
+
+\subsubsection*{Week 10}
+\begin{itemize}
+\item Structures
+\item Stacks
+\item Linked Lists
+\end{itemize}
+
+\subsubsection*{Week 11}
+\begin{itemize}
+\item File IO
+\item Start INI Reader Library
+\end{itemize}
+
+\subsubsection*{Week 12}
+\begin{itemize}
+\item INI Reader Library
+\end{itemize}
+
+\subsubsection*{Week 13}
+\begin{itemize}
+\item Function Pointers
+\item Command line arguments
+\end{itemize}
+
+\subsubsection*{Week 14}
+\begin{itemize}
+\item Scanning directories
+\item Getting files stats
+\item Start File Packer Project
+\end{itemize}
+
+\subsubsection*{Week 15}
+\begin{itemize}
+\item File Packer Project
+\end{itemize}
+
+\subsubsection*{Final}
+
+\pagebreak
+\section*{Lab Assignments}
+\subsection*{Lab 1}
+Implement ''Hello World'' with your own makefile.
+Implement ''Good-Bye World'' with a CMake file.
+C Data types assignment.  Using printf and sizeof to display the size of each data type.
+C Constructs.  Using printf, if, else, switch, case, break, default, for, while, do, continue.
+
+\subsection*{Lab 2}
+Writing C functions, calling functions, and prototypes.
+Using the C standard library, includes, and using the man pages.
+Writing a simple program that used the C stdlib. ( Menu, flip random coin, roll a dice, math functions )
+
+\subsection*{Lab 3}
+Implement basic macros( MIN, MAX, EVEN, ODD, DOUBLE, CUBE )
+Implement stdtype.h
+Implement stdtest.h
+Write unit tests for supplied functions.
+Using static arrays
+
+\subsection*{Lab 4}
+Using pointers to primitive types.
+Pointers with functions.
+Using malloc, calloc, realloc, and free
+
+\subsection*{Lab 5}
+Making dynamic arrays( input numbers from user )
+Moving around with pointers( scanning array, linear search, bubble sort )
+Multi-dimensional arrays
+
+\subsection*{Lab 6}
+Finding memory leaks
+Using Valgrind
+Custom memory pool
+
+\subsection*{Lab 7}
+Using strings
+Input strings from user
+Converting between strings and primitives
+
+\subsection*{Lab 8}
+Using libraries
+Writing a simple library
+
+\subsection*{Lab 9}
+Using structures 
+Simple state machine
+Linked list( not-sorted and sorted )
+
+\subsection*{Lab 10}
+Reading from text file
+Writing changes to a text file
+Writing primitives and structures to a binary file
+
+\subsection*{Lab 11}
+Command line parser, using function pointers to call custom functions
+
+\subsection*{Lab 12}
+Directory scanning.  Implement a ls/dir command.
+
+
+\pagebreak
+\section*{Strings Library Project}
+Implement the following functions to work like the C standard library functions  Each function should have its own header file and C source file.  The header file should be well documented as to the functions purpose, input parameters, and output values.  Each function should have a unit test.  You need to use CMake to make a library and a unit test binary that runs each functions unit test and reports each unit tests result.
+
+\subsection*{Functions To Implement}
+\begin{lstlisting}
+void * _memset( void *, I32, size_t );
+void * _memcpy( void *, void *, size_t );
+size_t _strlen( char * );
+char * _strcat( char *, char * );
+char * _strncat( char *, char * );
+char * _strcpy( char *, char * );
+char * _strncpy( char *, char * );
+char * _strdup( char * );
+char * _strndup( char * );
+I32 _strcmp( char *, char * );
+I32 _stricmp( char *, char * );
+char * _substr( char *, size_t );
+char * _trim( char * );
+char * _strchr( char *, char );
+char * _strrchr( char *, char );
+I32 _atoi( char * );
+char * _itoa( char *, I32 );
+char * _strtok( char *, char * );
+char * _strhex( char *dest, const I32 val ); //  write val as a hex string in dest
+char * _strbin( char *dest, const I32 val ); //  write val as a binary string in dest
+\end{lstlisting}
+
+\subsection*{Optional Functions}
+\begin{lstlisting}
+F32 _atof( char * );
+char * _ftoa( char *, F32 );
+char * _strstr( char *, char * );
+char * _strfry( char * ); 
+void * _memmove( void *, void *, size_t );
+\end{lstlisting}
+
+\pagebreak
+\section*{INI Reader Project}
+Develop a library that reads in a standard INI configuration file into memory, implement the give API functions to query the INI file, add new entries, and update entries.  Each function should have its own header file and C source file.  Each header file should be well documented as to its purpose, input parameters, and output values.  You need to use CMake to produce a library and a unit test program that tests each function in the API.
+
+\subsection*{API}
+\begin{lstlisting}
+struct Config // memeory struct to load the INI file into
+I32 ConfigOpen( Config *, char * ); // read a file into memory
+I32 ConfigClear( Config * );  // clear an config structs memory, no memory leaks!
+char * ConfigGetString( Config *, char *, char * ); // get a string value from the config settings
+I32 ConfigGetInt( Config *, char *, I32 ); // get an int value from the config settings
+F32 ConfigGetFloat( Config *, char *, F32 ); // get a float value from the config settings
+char * ConfigSetString( Config *, char *, char * ); // set or add a string
+I32 ConfigSetInt( Config *, char *, I32 ); // set or add an int
+F32 ConfigSetFloat( Config *, char *, F32 ); // set or add a float
+\end{lstlisting}
+
+\subsection*{Optional Functions}
+\begin{lstlisting}
+I32 ConfigSave( Config *, char * ); // save a config struct to a INI file
+\end{lstlisting}
+
+\pagebreak
+\section*{File Packer Project}
+Develop a file and directory packing utility.  This program will pack one or more files and/or directories into a single file or unpack a file rebuilding the packed file structure.  This program is controlled via command line arguments.
+
+The program takes the following arguments.
+\begin{lstlisting}
+pack -p [DIRECTORY TO PACK] [NAME OF PACK FILE]
+pack -u [PACK FILE]
+pack -h
+\end{lstlisting}
+
+\subsection*{Optional Arguments}
+\begin{lstlisting}
+pack -l [PACK FILE]
+pack -a [PACK FILE] [FILE/DIR TO ADD TO PACK]
+pack -d [PACK FILE] [FILE/DIR TO DELETE FROM PACK]
+\end{lstlisting}
+
+\end{document}
+
