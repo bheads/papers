@@ -1,13 +1,16 @@
 \documentclass[a4paper,12pt]{report}
 \usepackage{color}
 \usepackage{listings}
+\usepackage{fullpage}
+\usepackage[none]{hyphenat} 
+
 \lstset{ %
 language=C,                % choose the language of the code
-basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+basicstyle=\tiny,       % the size of the fonts that are used for the code
 numbers=left,                   % where to put the line-numbers
-numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+numberstyle=\tiny,      % the size of the fonts that are used for the line-numbers
 stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
-numbersep=5pt,                  % how far the line-numbers are from the code
+numbersep=4pt,                  % how far the line-numbers are from the code
 backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
 showspaces=false,               % show spaces adding particular underscores
 showstringspaces=false,         % underline spaces within strings
@@ -16,7 +19,7 @@ frame=single,           % adds a frame around the code
 tabsize=4,          % sets default tabsize to 2 spaces
 captionpos=b,           % sets the caption-position to bottom
 breaklines=true,        % sets automatic line breaking
-breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+breakatwhitespace=true,    % sets if automatic breaks should only happen at whitespace
 escapeinside={\%}{)}          % if you want to add a comment within your code
 }
 
@@ -29,204 +32,259 @@ C Programming
 \section*{Requirements}
 COSC 311
 
-\section*{Why Do We Need This Class}
-In the current computer science curriculum programming classes are based around high-level object orientated programming.  Many students do not have access to a low-level non object-orientated programming language such as C.  Our curriculum focuses on using languages like Java and Python which do not require students to handle memory management or pointer arithmetic.  A class is needed to help fill this void in our curriculum.
+\section*{Why We Need This Class}
+Current computer science curriculum programming classes are based around high-level object orientated programming.  Many students are not required to use a low-level non-object-oriented programming language such as C and are unprepared when the need presents itself.  Our curriculum focuses on languages like Java and Python which do not require students to handle important concepts such as memory management, memory pooling, mixing assembly with other languages, build tools, and pointer arithmetic.  A class is needed to help fill this void within our curriculum.
 
 \section*{Class Purpose}
-Introduce students to C programming concepts, tools, libraries, and the importance if C in the realm of computers and computer science.  Students will be able to read and develop C programs, understand how to use and implement libraries, have an understanding of program and memory structure, have the ability to implement common data structures and an understanding of pointer arithmetic.  Three large projects will be used to teach C programming semantics and constructs in a non-object orientated environment while targeting common C programming problems.  Focus will be placed on efficient and reusable code, while fostering a deeper understanding of program memory and instruction flow.  
+The purpose of this class is to introduce students to C programming concepts, tools, libraries, and the importance of C in the realm of computers and computer science.  Students will be able to read and develop C programs, understand how to use and implement libraries, have an understanding of program and memory structure, have the ability to implement common data structures and an understanding of pointer arithmetic.  Three large projects will be used to teach C programming semantics and constructs in a non-object-oriented environment while targeting common C programming problems.  Focus will be placed on efficient and reusable code, while fostering a deeper understanding of program memory and instruction flow.  
 
 \section*{Target Students}
-Students capable of implementing common data structures and algorithms in other languages but want to learn or get practice in C and low level programming.  Many students in the department already come asking me for advice and tutoring in C and C++ and several have expressed interest in a class such as the one I am proposing.  I wish to make this class available to undergraduate and graduate students.
+Students capable of implementing common data structures and algorithms in other languages but want to learn or get practice in C and low-level programming.  Many students in the department ask me for advice and tutoring in C and C++; several have expressed interest in a class such as the one I am proposing.  I wish to make this class available to undergraduate and graduate students.
 
 \section*{What I Want To Get Out Of This Class}
-I want to continue to build my experience and knowledge of education.  I have been programming in C over the last seven years, and I want to pass on that knowledge to others so that they have a more rounded education and experience in real-world tools. 
+I want to continue to build my experience and knowledge at teaching others concepts and applications in computer science.  I have been programming in C over the last seven years, and I want to pass on that knowledge to others so that they have a more rounded education and experience in real-world tools. 
 
 
 \section*{Grading}
-Grades are based on five categories
+Grades are based on three categories
 
 \begin{tabular}{l l}
+60\% & C projects \\
 20\% & Lab Assignments \\
-20\% & String Library Project \\
-20\% & INI Reader Library Projects \\
-20\% & File Packer Project \\
 20\% & Final 
 \end{tabular}
 
+\section*{Textbook}
+An excellent textbook on C programing was selected for this class.  The book covers most of the major topics that will be covered.  The book can be accessed for free by students on the Books 24x7 database.
+
+\begin{tabular}{l}
+C Programming \\
+Salim Y. Amdani \\
+Laxmi Publications \copyright 2009 (414 pages) \\
+ISBN:9788131805466 \\
+\end{tabular}
+
 \section*{Lab Assignments}
-Lab assignments are given at the start of each week and are due Friday at midnight via e-mail.  Lab assignments are small projects based on weekly lecture topics.  Lab assignments are worth 8pts with 12 total assignments.  Assignments lose 1pt each week they are late and must be turned in no later then the final.
+Lab assignments are given at the start of each week and are due Friday at midnight via e-mail.  Lab assignments are small projects based on weekly lecture topics.  Lab assignments are worth 10pts each.  Assignments lose 1pt each week they are late and must be turned in no later then the last day of class.
 
 \section*{Projects}
-Three large projects will be assigned during the semester. These projects can be worked on alone or in pairs.  These projects combine the skills taught in class and practiced in lab assignments.  Ech projects is worth $1/5$ of the students grade.  Projects will be due two weeks after they are given.  Late projects will lose 5pts each week they are late and must be turned in no later then the final.
+Four large projects will be assigned during the semester. These projects can be worked on alone or in pairs.  These projects combine the skills taught in class and practiced in lab assignments.  Projects will be due two weeks after they are given.  Late projects will lose 5pts each week they are late and must be turned in no later then the last day of class.
+
 \subsubsection*{Groups}
-The three large projects can be worked on in groups of two or one group of three if there are an odd number of students.  Each member of a group must turn in a minimum one page write up of their contribution to the project.
+Students can work in groups of two or three on larger projects, but each member of a group must turn in a minimum one page write up of their contribution to the project.
+
 \subsubsection*{Graduate Students}
 Graduate students are expected to complete all optional problems.
 
 \section*{Class Topics Plan}
 List of topics and assignments planned for each week.
 
-\subsubsection*{Week 1}
+\subsection*{Week 1}
+\subsubsection*{ Readings }
+Chapter 1
+\subsubsection*{Lecture Topics}
 \begin{itemize}
 \item History of C
-\item Why is C still important
-\item "Hello world" program
-\item C programming tool chain
-\item Command line overview
-\item Makefiles and CMake
-\item C syntax and semantics
-\item Data types
-\item Constructs
+\item Why is C important
+\item GCC
+\item Makefiles
+\item CMake
 \end{itemize}
-
-\subsubsection*{Week 2}
+\subsubsection*{Assignment}
 \begin{itemize}
-\item Functions
-\item C standard library
+\item Hello World - Makefile
+\item Good-Bye World - CMake
 \end{itemize}
 
-\subsubsection*{Week 3}
+\subsection*{Week 2}
+\subsubsection*{ Readings }
+Chapter 3, 4, 5
+\subsubsection*{Lecture Topics}
+\begin{itemize}
+\item Data Types 
+\item Constructs
+\item Functions
+\item Storage Class
+\item Intro stdlib
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
+\item print sizeof C types
+\item Conditional Constructs
+\item Looping
+\item Basic functions
+\item Pass by value
+\item Recursion
+\end{itemize}
+
+\subsection*{Week 3}
+\subsubsection*{ Readings }
+Chapter 6
+\subsubsection*{Lecture Topics}
 \begin{itemize}
 \item Macros
-\item Header files
-\item Dealing with the data type size issue stdtype.h
-\item assert, enforce, and errors
-\item unit testing
-\item Static arrays
+\item Header Files
+\item Problems with data types
+\item assert, enforce, and C errors
+\item static arrays
+\item stdlib
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
+\item Write stdtype.h ( U32, I32, ect... )
+\item Write error.h ( assert, enforce, ... )
+\item Arrays( reading, writing, sorting )
 \end{itemize}
 
-\subsubsection*{Week 4}
+\subsection*{Week 4}
+\subsubsection*{ Readings }
+Chapter 7
+\subsubsection*{Lecture Topics}
 \begin{itemize}
 \item Intro to pointers
-\item Malloc, calloc, realloc, and free
-\end{itemize}
-
-\subsubsection*{Week 5}
-\begin{itemize}
+\item Passing Pointers
+\item malloc, calloc, realloc, free
 \item Dynamic arrays
-\item Pointer arithmetic
 \end{itemize}
-
-\subsubsection*{Week 6}
+\subsubsection*{Assignment}
 \begin{itemize}
-\item Memory Leaks, dangling pointer
-\item Memory management 
+\item Functions that take pointers
+\item Dynamic Memory ( primitives, arrays )
+\item Using malloc, calloc, realloc, and free
 \end{itemize}
 
-\subsubsection*{Week 7}
+\subsection*{Week 5}
+\subsubsection*{Lecture Topics}
 \begin{itemize}
-\item Strings
-\item String conversions
+\item Intro to Strings
+\item String Conversions
+\item Pointer Arithmetic 
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
+\item Reading and writing strings
+\item Strings ( Searching, sorting, case issues ) string.h
+\item Strings( Searching, sorting ) pointer arithmetic
 \end{itemize}
 
-\subsubsection*{Week 8}
+\subsection*{Week 6}
+\subsubsection*{Lecture Topics}
 \begin{itemize}
 \item Libraries
-\item Start String Library Project
+\item Unit testing 
 \end{itemize}
-
-\subsubsection*{Week 9}
+\subsubsection*{Assignment}
 \begin{itemize}
-\item String Library Project
+\item Start String Library Project 
 \end{itemize}
 
-\subsubsection*{Week 10}
+\subsection*{Week 7}
+\subsubsection*{Lecture Topics}
+\begin{itemize}
+\item Memory Leaks
+\item Dangling Pointers 
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
+\item String Library Project Due
+\end{itemize}
+
+\subsection*{Week 8}
+\subsubsection*{ Readings }
+Chapter 8
+\subsubsection*{Lecture Topics}
 \begin{itemize}
 \item Structures
+\item Unions
+\item Anonymous Structures and Unions
 \item Stacks
 \item Linked Lists
 \end{itemize}
-
-\subsubsection*{Week 11}
+\subsubsection*{Assignment}
 \begin{itemize}
-\item File IO
-\item Start INI Reader Library
+\item Basic Struct and unions usage
+\item Convert infix to postfix 
 \end{itemize}
 
-\subsubsection*{Week 12}
+\subsection*{Week 9}
+\subsubsection*{Lecture Topics}
 \begin{itemize}
-\item INI Reader Library
+\item Timing code
+\item Memory Management
+\item Memory Pools
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
+\item Start Memory Pool Library Project
 \end{itemize}
 
-\subsubsection*{Week 13}
+\subsection*{Week 10}
+\subsubsection*{Lecture Topics}
 \begin{itemize}
+\item Using Assembly with C
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
+\item Memory Pool Library Project Due
+\end{itemize}
+
+\subsection*{Week 11}
+\subsubsection*{ Readings }
+Chapter 9
+\subsubsection*{Lecture Topics}
+\begin{itemize}
+\item File I/O - Text Files
+\item String Parsing with C
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
+\item Start INI Reader Library Project
+\end{itemize}
+
+\subsection*{Week 12}
+\subsubsection*{Lecture Topics}
+\begin{itemize}
+\item File I/O - Binary Files
 \item Function Pointers
-\item Command line arguments
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
+\item INI Reader Project Due
 \end{itemize}
 
-\subsubsection*{Week 14}
+\subsection*{Week 13}
+\subsubsection*{Lecture Topics}
 \begin{itemize}
-\item Scanning directories
-\item Getting files stats
+\item Command line arguments
+\item Scanning Directories and Files
+\item File Stats
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
 \item Start File Packer Project
 \end{itemize}
 
-\subsubsection*{Week 15}
+\subsection*{Week 14}
+\subsubsection*{Lecture Topics}
 \begin{itemize}
-\item File Packer Project
+\item GUI - FLTK
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
+\item File Packer Project Due
 \end{itemize}
 
-\subsubsection*{Final}
 
-\pagebreak
-\section*{Lab Assignments}
-\subsection*{Lab 1}
-Implement ''Hello World'' with your own makefile.
-Implement ''Good-Bye World'' with a CMake file.
-C Data types assignment.  Using printf and sizeof to display the size of each data type.
-C Constructs.  Using printf, if, else, switch, case, break, default, for, while, do, continue.
+\subsection*{Week 15}
+\subsubsection*{Lecture Topics}
+\begin{itemize}
+\item Review for final 
+\end{itemize}
+\subsubsection*{Assignment}
+\begin{itemize}
+\item All Projects and Assignments are due
+\end{itemize}
 
-\subsection*{Lab 2}
-Writing C functions, calling functions, and prototypes.
-Using the C standard library, includes, and using the man pages.
-Writing a simple program that used the C stdlib. ( Menu, flip random coin, roll a dice, math functions )
-
-\subsection*{Lab 3}
-Implement basic macros( MIN, MAX, EVEN, ODD, DOUBLE, CUBE )
-Implement stdtype.h
-Implement stdtest.h
-Write unit tests for supplied functions.
-Using static arrays
-
-\subsection*{Lab 4}
-Using pointers to primitive types.
-Pointers with functions.
-Using malloc, calloc, realloc, and free
-
-\subsection*{Lab 5}
-Making dynamic arrays( input numbers from user )
-Moving around with pointers( scanning array, linear search, bubble sort )
-Multi-dimensional arrays
-
-\subsection*{Lab 6}
-Finding memory leaks
-Using Valgrind
-Custom memory pool
-
-\subsection*{Lab 7}
-Using strings
-Input strings from user
-Converting between strings and primitives
-
-\subsection*{Lab 8}
-Using libraries
-Writing a simple library
-
-\subsection*{Lab 9}
-Using structures 
-Simple state machine
-Linked list( not-sorted and sorted )
-
-\subsection*{Lab 10}
-Reading from text file
-Writing changes to a text file
-Writing primitives and structures to a binary file
-
-\subsection*{Lab 11}
-Command line parser, using function pointers to call custom functions
-
-\subsection*{Lab 12}
-Directory scanning.  Implement a ls/dir command.
 
 
 \pagebreak
@@ -265,6 +323,71 @@ char * _strstr( char *, char * );
 char * _strfry( char * ); 
 void * _memmove( void *, void *, size_t );
 \end{lstlisting}
+
+\pagebreak
+\section*{Memory Pool Library Project}
+Develop a library to create a stack based memory pool.  The memory pool will be used in a time critical application that requires dynamic chunks of memory to be created and maintained during the algorithm.  There will be one structure, the memory pool, and four functions.
+
+\subsection*{API}
+\begin{lstlisting}
+struct MemoryPool // holds info about a memory pool
+
+/*
+    Creates a memory pool of size pool_size.  If pool is NULL,
+    this function will return a pointer to a New MemoryPool, 
+    else returns pool;
+
+    Example Usage:
+    // create a 10K pool
+    MemoryPool *pool = PoolCreate( NULL, 10240 ); 
+
+*/
+MemoryPool * PoolCreate( MemoryPool *pool, size_t pool_size );
+
+/*
+    Grab memory from a pool.  Returns NULL if pool is out of 
+    memory.
+
+    Example Usage:
+    // get 1024 bytes from the pool
+    char *str = (char *)PoolMalloc( pool, 1024 ); 
+
+*/
+void * PoolMalloc( MemoryPool *pool, size_t block_size );
+
+/*
+   Releases all of the memory in the pool to be reused.
+   Watch out for dangeling pointers!
+*/
+void PoolRelease( MemoryPool *pool );
+
+/*
+   Frees the memory pool back to the operating system.
+   Pool is nolonger usable.
+
+*/
+void PoolFree( MemoryPool *pool );
+\end{lstlisting}
+
+\subsection*{Optional Functions}
+Implement the two-sided memory pool or the long/short term two sided memory pool.
+
+For two-side memory pool:
+\begin{lstlisting}
+// Replace PoolRelease with PoolSwap
+void PoolSwap( MemoryPool * pool );
+\end{lstlisting}
+
+For long/short term two-side memory pool:
+\begin{lstlisting}
+// Add parameter to PoolMalloc
+void * PoolMalloc( MemoryPool * pool, size_t block_size, int long_term );
+
+// Add parameter to PoolRelease
+void Poolrelease( MemoryPool *pool, int long_term );
+\end{lstlisting}
+
+
 
 \pagebreak
 \section*{INI Reader Project}
