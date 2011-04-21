@@ -1,6 +1,7 @@
-\documentclass[12pt,a4paper,oneside]{report}
+\documentclass[12pt,a4paper,oneside]{article}
 \usepackage{fullpage}
 \usepackage[none]{hyphenat} 
+\usepackage{natbib}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
@@ -18,21 +19,25 @@
         \HRule\\[1.5cm]
 
         % Author and supervisor
-        \begin{minipage}{0.4\textwidth}
+        \begin{minipage}{0.45\textwidth}
             \begin{flushleft} \large
                 \emph{Author:}\\
-                Byron \textsc{Heads}
+                Byron \textsc{Heads} \\
+                \small Eastern Michigan University\\
+                \small Computer Science Department \\
             \end{flushleft}
         \end{minipage}
-        \begin{minipage}{0.4\textwidth}
+        \begin{minipage}{0.45\textwidth}
             \begin{flushright} \large
                 \emph{Thesis Advisor:} \\
-                    Dr.~William \textsc{Sverdlik}
+                Dr.~William \textsc{Sverdlik}\\
+                \small Eastern Michigan University\\
+                \small Computer Science Department
             \end{flushright}
         \end{minipage}
 
         \vfill
-        { \large \textbf{Abstract Summary}}\\
+        %{ \large \textbf{Abstract Summary}}\\
     
         \HRule\\[0.5cm]
         { \large \today }
@@ -42,10 +47,34 @@
 \begin{abstract}
 Modern computer games, simulations, and visualization software are some of the most complex and demanding software in use today.  Many of these programs need to run on inexpensive and available commercial-grade hardware.  Consumers expect games to continuously improve in visual quality, physics, and game-play complexity.  Early computer games were written as single projects that targeted specific hardware, but to continue developing this way has become to costly in resource and time.  To reduce the cost and complexity of development, game developers build there software on top of game engines.
 
-In $2004$ the video game industry was worth \$$7.3$ billion and the industry is still growing.  Computer simulation and visualization software are used the government, military, and universities for research and other projects.  
+In $2010$ the video game industry was worth over \$$100$ billion\citep{French:2010} and the industry is still growing.  Computer simulation and visualization software are used the government, military, and universities for research and other projects.  Most of the research and knowledge behind game engine architecture is locked up in the private sector with only a small amount of details in the public domain.  Much of the information is about low level implementation and not how to design the engine itself.
+
+My research will focus on three major aspects on game engine architecture.  First I will define what is a game engine, the language and terminology used to describe it, and where the division between game and game engine exists.  Second I will design the architecture that makes up the constructs of a game engine.  This will focus on the overall design and interconnectivity of the engine itself.  Lastly I will develop the lower level connections between the modules that make up the game engine.  With this I will present a proposed game engine API.
 
 \end{abstract}
+\newpage 
+\tableofcontents
+\newpage 
 
+\section{ Introduction }
+%What is the problem
+%Why is it important
+
+\section{ Thesis Statement }
+
+\section{ Literature Survey }
+
+\section{ Approach }
+
+\section{ Preliminary Results }
+
+\section{ Work Plan }
+
+\section{ Implications of Research }
+
+\newpage
+\bibliography{proposal}{}
+\bibliographystyle{plainnat}
 
 
 \end{document}
