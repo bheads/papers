@@ -14,8 +14,8 @@
         \textsc{\large Computer Science Department}\\
         \textsc{\large Masters Thesis Proposal}\\[0.5cm]
         \HRule\\[0.4cm]
-        { \huge \bfseries Cross-Platform Multi-Threaded \\
-            Game Engine Development }\\[0.4cm]
+        { \huge \bfseries  Cross-Platform Parallel-Processing \\
+            Game Engine Architecture }\\[0.4cm]
         \HRule\\[1.5cm]
 
         % Author and supervisor
@@ -45,11 +45,11 @@
 \end{titlepage}
 
 \begin{abstract}
-Modern computer games, simulations, and visualization software are some of the most complex and demanding software in use today.  Many of these programs need to run on inexpensive and available commercial-grade hardware.  Consumers expect games to continuously improve in visual quality, physics, and game-play complexity.  Early computer games were written as single projects that targeted specific hardware, but to continue developing this way has become to costly in resource and time.  To reduce the cost and complexity of development, game developers build there software on top of game engines.
+Design and development of video games and simulations is an expensive and complex task.  To reduce the cost and complexity many developers turn to use game engines to drive there programs.  Many of these game engines are tied to single platforms and game genres.  They often are designed to excel in specific tasks and are not always the best tool for a project to use.  This failure comes from design on the game engine itself.
 
-In $2010$ the video game industry was worth over \$$100$ billion\citep{French:2010} and the industry is still growing.  Computer simulation and visualization software are used the government, military, and universities for research and other projects.  Most of the research and knowledge behind game engine architecture is locked up in the private sector with only a small amount of details in the public domain.  Much of the information is about low level implementation and not how to design the engine itself.
+The game engine needs to be properly defined with common terminology used to describe the parts of the game engine.  With this a proper game engine architecture can be design built around the importance of the connections between the engine components and the game code.  The architecture needs to be build to be genre-less, have a flex-able API design with an hardware abstraction layer to support multiple hardware and software platforms, and should be design to be parallel from the start.   
 
-My research will focus on three major aspects on game engine architecture.  First I will define what is a game engine, the language and terminology used to describe it, and where the division between game and game engine exists.  Second I will design the architecture that makes up the constructs of a game engine.  This will focus on the overall design and interconnectivity of the engine itself.  Lastly I will develop the lower level connections between the modules that make up the game engine.  With this I will present a proposed game engine API.
+My research will focus on defining a game engine and its terminology, the structure of a game engine, and the development of an API that supports all of my stated requirements.  An experimental game engine will be created to test out the elements of the game engine architecture. 
 
 \end{abstract}
 \newpage 
@@ -57,12 +57,24 @@ My research will focus on three major aspects on game engine architecture.  Firs
 \newpage 
 
 \section{ Introduction }
-%What is the problem
-%Why is it important
+Modern computer games, simulations, and visualization software are some of the most complex and demanding software in use today.  Many of these programs need to run on inexpensive and available commercial-grade hardware.  Consumers expect games to continuously improve in visual quality, physics, and game-play complexity.  Early computer games were written as single projects that targeted specific hardware, but to continue developing this way has become to costly in resource and time.  To reduce the cost and complexity of development, game developers build there software on top of game engines.
 
-\section{ Thesis Statement }
+In $2010$ the video game industry was worth over \$$100$ billion\citep{French:2010} and the industry is still growing.  Computer games have moved beyond the entertainment industry, and have been embraced by several other domains including governments, militaries, and universities for research and educational simulations.  Using existing game engines and content creation tools can reduce the cost of development, but many engines are designed to fit specific game genres and many require a developer to fit their project to better match the existing tools.  
+
+\section{ Problems In Game Engine Architecture }
+There are many limiting factors in the field of game engine architecture development.  These problems emerge from the machines we play games on, to the way games are designed, and the industry itself.
+
+Today there are so many different platforms the video games can be made to run on, and this presents a problem.  As a game developer you want to target a large audience to maximize your games player base, but the range of hardware makes it almost impossible to target everything.  Do you limit your games quality of graphics, sound, game play, size, scale, and controls just so it can run on the new mobile gaming platforms?  Or do you target hardware of a specific requirement?  How do you handle different operating systems, graphics hardware, audio hardware, networking, or controls?  This is a problem for the game engine.
+
+An extension of the platform problem is the introduction of multi-core processors.  Parallel processing is the new direction of the hardware industry.  We now have six core processors and video cards with thousands of processing pipes.  Any modern game needs to take advantage of parallel processing.  
+
+Research and the experience to design and create game engine architecture is locked up in the private sector with only a small amount of details in the public domain.  Much of the information is available is low level implementation details  and not the design of the engine itself.  Companies like to protect their intellectual property and release little to no information on engine architecture.  This is a loss to the field of game engine architecture.
+
+\section{ Research Goal }
+My research will focus on three major aspects on game engine architecture.  First I will define what is a game engine, the language and terminology used to describe it, and where the division between game and game engine exists.  Second I will design the architecture that makes up the constructs of a game engine.  This will focus on the overall design and interconnectivity of the engine itself.  Lastly I will develop the lower level connections between the modules that make up the game engine.  With this I will present a proposed game engine API.
 
 \section{ Literature Survey }
+
 
 \section{ Approach }
 
@@ -71,6 +83,7 @@ My research will focus on three major aspects on game engine architecture.  Firs
 \section{ Work Plan }
 
 \section{ Implications of Research }
+
 
 \newpage
 \bibliography{proposal}{}
