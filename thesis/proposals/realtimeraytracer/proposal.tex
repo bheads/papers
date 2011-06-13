@@ -94,7 +94,7 @@ In a pinhole camera the image is upside down on the film because the photons pas
 
  \begin{figure}[H]
 \includegraphics[scale=0.6]{raycamera.png} 
-\caption{ray tracer camera}
+\caption{Ray tracer camera}
 \label{ray-camera}
 \end{figure}
 
@@ -123,10 +123,13 @@ Algorithm \ref{ray-trace} is a simple implementation that works fairly similar t
 	\STATE \textbf{return} c
 
 \end{algorithmic}
-\caption{Ray tracing algorithm}
+\caption{Simple ray tracing algorithm}
 \label{ray-trace}
 \end{algorithm}
 
+Adding light and shadow to this algorithm is done by computing the light at each collision point.  At each point of collision a ray is casted from that point to each light in the scene.  If their is not an object between the collision point and the light then the point is considered in light, else it is in shadow.  The color of a point is computed from three components: \textit{ambient}, \textit{diffuse}, and \textit{specular} \cite{kalinini:2008}.
+
+Surfaces can be made reflective or refractive by using the recursive nature of ray tracing.  If a surface is reflective, a new ray is computed at the ray collision point using the surface normal at that point as the reflection plane.  The tracing algorithm can be called with the ray.  Refraction is handled in the same way with the exception of the way the refracted ray is computed.  Algorithm \ref{ray-trace-full} shows an example of lighting, reflections, and refractions.  
   
 
 \begin{algorithm}[H]
@@ -139,7 +142,7 @@ Algorithm \ref{ray-trace} is a simple implementation that works fairly similar t
 	\STATE $I_{p} \gets raytrace( castray( eye, p ))$
 \ENDFOR
 \STATE 
-\STATE \textit{color} \textbf{function} raytrace(  R )
+\STATE \textit{color} \textbf{function} raytrace(  R, depth )
 	\STATE $c  \gets \textit{ambient color } $
 	\STATE $d \gets \infty $
 	\STATE $s \gets \textit{NULL}$
@@ -166,12 +169,12 @@ Algorithm \ref{ray-trace} is a simple implementation that works fairly similar t
 			\ENDFOR
 		\ENDFOR
 		\STATE \COMMENT{Recursively compute reflections}
-		\IF{ $reflectivity( s ) > 0$ }
+		\IF{ $reflectivity( s ) > 0\ \textbf{AND}\ depth < depthMax$ }
 			\STATE $rr \gets reflection( pi, normal( s, pi ))$
 			\STATE $c \gets c + raytrace( rr ) * reflectivity( s )$
 		\ENDIF
 		\STATE \COMMENT{Recursively compute refraction}
-		\IF{ $transparency( s ) > 0$ }
+		\IF{ $transparency( s ) > 0\ \textbf{AND}\ depth < depthMax$ }
 			\STATE $rr \gets refraction( pi, normal( s, pi ), s )$
 			\STATE $c \gets c + raytrace( rr ) * transparency( s )$
 		\ENDIF
@@ -179,10 +182,28 @@ Algorithm \ref{ray-trace} is a simple implementation that works fairly similar t
 	\STATE \textbf{return} c
 
 \end{algorithmic}
-\caption{Ray tracing algorithm}
+\caption{ Ray tracing algorithm with lighting }
 \label{ray-trace-full}
 \end{algorithm}
 
+The images produced with this algorithm produces sharp edges around objects and shadows.  The image is to sharp to be natural, to clean up the image anti aliasing and soft shadows need to be added.  Adding anti aliasing is done by casting more rays through a pixel and averaging the resulting colors together.  To do this the area in space that the pixel covers needs to be subdivided into smaller regions.  A ray is cast from the eye through these regions.  The ray can be cast through the center for a shaper image, or randomly for softer edges.  Anti aliasing can increase the computation cost dramatically.  Splitting a pixel into quarters increases the computation cost by four times.
+
+\begin{figure}[H]
+\includegraphics[scale=0.6]{aa.png} 
+\caption{Anti aliasing for a single pixel.}
+\label{aa}
+\end{figure}
+
+Soft shadows are used to make a softer transition from light to shadow.     The simple lighting model cast a ray from the collision point to the center of a light, but for points that are on the edge of a shadow may get partial light.  In the real world a light bulb has volume.  A soft shadow is computed by casting several rays from the collision point to a point in the lights volume, the results are averaged together to computer the finial color.
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.35]{result1.png} 
+\caption{Non-optimized ray traced image with 8 light, and 80 spheres.  34 minuet render time.}
+\label{result1}
+\end{center}
+\end{figure}
 
 
 \newpage
