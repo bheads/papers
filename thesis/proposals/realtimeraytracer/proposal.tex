@@ -2,6 +2,9 @@
 \usepackage{fullpage}
 \usepackage[none]{hyphenat} 
 \usepackage{natbib}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
@@ -45,6 +48,8 @@
 
 \begin{abstract}
 
+
+
 \end{abstract}
 \newpage 
 \tableofcontents
@@ -52,11 +57,140 @@
 
 \section{ Introduction }
 
+Computer graphics used in modern games and simulation environments are based around the \textbf{z-buffering} algorithm.  Z-buffering builds a scene by computing the depth of triangles in a scene from the from a view-point,  to as the \textbf{eye}.  The algorithm is simple and each pixel can be computed with stream processors that are commonly  used on modern GPUs.  Hardware implementations of z-buffers commonly have two frame buffers for a color and a depth buffer.    The color buffer is split into the front buffer and the back buffer.  The back buffer is where the algorithm is rendering to, and the front buffer is drawn to the screen.  Once the back buffer it filled it is swapped with the front buffer, this is normally done with a simple pointer swap.  The algorithm for z-buffer is as follows \cite{fast:2008}:
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\STATE $C[ ] \gets \textit{background color}$ 
+\STATE $Z[ ] \gets \infty$
+\FOR{ all \textit{N} triangles }
+	\FOR{ each pixel p in triangle }
+		\STATE $c \gets \textit{new color}$
+		\STATE $z \gets \textit{new depth}$
+		\IF{ $z < Z_{p} $ }
+			\STATE $Z_{p} \gets z$
+			\STATE $C_{p} \gets c$
+		\ENDIF
+	\ENDFOR
+\ENDFOR
+\end{algorithmic}
+\caption{Example of the z-buffer algorithm}
+\label{z-buffer}
+\end{algorithm}
+
+This algorithm works by tracking the depth of the color for each given pixel that is rendered in the back buffer.  This algorithm is fast and easy to implement but nowhere in the algorithm is light, shadow, reflection, or refraction calculated.  To produce these effects simple ray casting needs to be added to the z-buffer algorithm, but a z-buffer only accounts for testing distance from a single point, the eye, but to test for objects in shadow or to calculate reflection the algorithm needs to be able to work from any point in space.  The solution relies in building a better physics model for light.
+
+To make a better model we first need to understand how light works.  In the real world light source emit photons that collide with an object which changes the energy state of the photon.  This photon is then reflected off of the object and then enters into the lens of our eye.  From there our brain interpreters this as color.  One problem with this model is that only a very small percent of the emitted light is actually seen, most of the computations are wasted and never used.  A better solution exists in ray tracing.  
+
+A more efficient way to model realistic light is to trace photons that enter the eye back to sources of light.  Furthermore each photon can be computed independently of each other making ray tracing inherently parallel in nature.  An initial point is used as the light focal point, this is known as the \textit{eye}.  A photon is traced backwards from the eye through an image plane that is in front of the eye.  This image plane acts like film in a pinhole camera.  
+
+\begin{figure}[H]
+\includegraphics[scale=0.6]{pineholecamera.png} 
+\caption{Pinhole camera}
+\label{pinhole-camera}
+\end{figure}
+
+In a pinhole camera the image is upside down on the film because the photons pass through the focal point and cross the center plain.  The camera can be simplified by moving the film in front of the focal point.
+
+ \begin{figure}[H]
+\includegraphics[scale=0.6]{raycamera.png} 
+\caption{ray tracer camera}
+\label{ray-camera}
+\end{figure}
+
+Algorithm \ref{ray-trace} is a simple implementation that works fairly similar to the z-buffering algorithm.  The scene consists on a list of geometric  objects.  Any shape that ray-object collision can be detected can be used.  The image buffer is an array that holds the resulting output from the algorithm.  A ray consists of a starting point and a normalized direction.  A ray is created at the eye, in the direction of each pixel in the image plane.  The color of the pixel is set to the color of the closest object that the ray collides with.  A simple ray tracer can be made with the following algorithm:
+
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+\STATE $O[ ] \gets \textit{All objects in scene}$ 
+\STATE $I[] \gets 0$ \COMMENT{Clear image buffer}
+\STATE
+\FOR{ each pixel p in I }
+	\STATE $I_{p} \gets raytrace( castray( eye, p ))$
+\ENDFOR
+\STATE 
+\STATE \textit{color} \textbf{function} raytrace(  R )
+	\STATE $c  \gets \textit{ambient color } $
+	\STATE $d \gets \infty $
+	\FOR{ each object o in O[] }
+		\IF{ collision( R, o )  }
+			\IF{ $distance( \textit{eye}, o ) < d$ }
+				\STATE $d \gets distance( \textit{eye}, o )$
+				\STATE $c \gets color( o )$
+			\ENDIF
+		\ENDIF
+	\ENDFOR
+	\STATE \textbf{return} c
+
+\end{algorithmic}
+\caption{Ray tracing algorithm}
+\label{ray-trace}
+\end{algorithm}
+
+  
+
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+\STATE $O[\ ] \gets \textit{All objects in scene}$ 
+\STATE $L[\ ] \gets \textit{All lights in scene}$
+\STATE $I[\ ] \gets 0$ \COMMENT{Clear image buffer}
+\STATE
+\FOR{ each pixel p in I }
+	\STATE $I_{p} \gets raytrace( castray( eye, p ))$
+\ENDFOR
+\STATE 
+\STATE \textit{color} \textbf{function} raytrace(  R )
+	\STATE $c  \gets \textit{ambient color } $
+	\STATE $d \gets \infty $
+	\STATE $s \gets \textit{NULL}$
+	\FOR{ each object o in O[] }
+		\IF{ collision( R, o )  }
+			\IF{ $distance( \textit{eye}, o ) < d$ }
+				\STATE $d \gets distance( \textit{eye}, o )$
+				\STATE $s \gets o$
+			\ENDIF
+		\ENDIF
+	\ENDFOR
+	\IF{ $s\ \textbf{NOT}\ \textit{NULL}$ }
+		\STATE \COMMENT{Find direct light on object s}
+		\STATE $pi \gets pointOfCollision( R, s )$
+		\FOR{ each light l in L }
+			\STATE $lr \gets castRay( pi, l )$
+			\STATE $ld \gets distance( pi, l )$
+			\STATE $shade \gets 1$
+			\FOR{ each object o in O }
+				\IF{ collision( lr, o ) \textbf{AND} distance( lr, o ) < ld }
+					\STATE $shade \gets 0$				
+				\ENDIF
+				\STATE $c \gets c +( diffuse( s, l ) + specular( s, l )) * shade$ 
+			\ENDFOR
+		\ENDFOR
+		\STATE \COMMENT{Recursively compute reflections}
+		\IF{ $reflectivity( s ) > 0$ }
+			\STATE $rr \gets reflection( pi, normal( s, pi ))$
+			\STATE $c \gets c + raytrace( rr ) * reflectivity( s )$
+		\ENDIF
+		\STATE \COMMENT{Recursively compute refraction}
+		\IF{ $transparency( s ) > 0$ }
+			\STATE $rr \gets refraction( pi, normal( s, pi ), s )$
+			\STATE $c \gets c + raytrace( rr ) * transparency( s )$
+		\ENDIF
+	\ENDIF
+	\STATE \textbf{return} c
+
+\end{algorithmic}
+\caption{Ray tracing algorithm}
+\label{ray-trace-full}
+\end{algorithm}
+
+
 
 \newpage
-\bibliography{proposal}{}
-\bibliographystyle{plainnat}
-
+\listofalgorithms
+\listoffigures
+\listoftables
+\bibliographystyle{plain}
+\bibliography{proposal}
 
 \end{document}
 
