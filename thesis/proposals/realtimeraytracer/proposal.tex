@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,oneside]{article}
+\documentclass[11pt,a4paper,oneside]{article}
 \usepackage{fullpage}
 \usepackage[none]{hyphenat} 
 \usepackage{natbib}
@@ -40,6 +40,11 @@
 
         \vfill
         %{ \large \textbf{Abstract Summary}}\\
+
+		\begin{center}
+			\includegraphics[scale=0.45]{cover.png} 
+		\end{center}
+	
     
         \HRule\\[0.5cm]
         { \large \today }
@@ -51,11 +56,15 @@
 
 
 \end{abstract}
-\newpage 
-\tableofcontents
+%\newpage 
+%\tableofcontents
 \newpage 
 
 \section{ Introduction }
+The field of computer graphics has helped push the need for faster computers and better algorithms.  Producing life like and stunning computer generated graphics is a large field of study in computer science.  From the early design of computer interfaces, to industry changing computer aided design software, a multi-billion dollar a year game industry, and life like CGI movies\cite{gaming:2007} computer graphics have been an important field of study.   
+
+
+\section{Z-Buffering}
 
 Computer graphics used in modern games and simulation environments are based around the \textbf{z-buffering} algorithm.  Z-buffering builds a scene by computing the depth of triangles in a scene from the from a view-point,  to as the \textbf{eye}.  The algorithm is simple and each pixel can be computed with stream processors that are commonly  used on modern GPUs.  Hardware implementations of z-buffers commonly have two frame buffers for a color and a depth buffer.    The color buffer is split into the front buffer and the back buffer.  The back buffer is where the algorithm is rendering to, and the front buffer is drawn to the screen.  Once the back buffer it filled it is swapped with the front buffer, this is normally done with a simple pointer swap.  The algorithm for z-buffer is as follows \cite{fast:2008}:
 
@@ -80,7 +89,9 @@ Computer graphics used in modern games and simulation environments are based aro
 
 This algorithm works by tracking the depth of the color for each given pixel that is rendered in the back buffer.  This algorithm is fast and easy to implement but nowhere in the algorithm is light, shadow, reflection, or refraction calculated.  To produce these effects simple ray casting needs to be added to the z-buffer algorithm, but a z-buffer only accounts for testing distance from a single point, the eye, but to test for objects in shadow or to calculate reflection the algorithm needs to be able to work from any point in space.  The solution relies in building a better physics model for light.
 
-To make a better model we first need to understand how light works.  In the real world light source emit photons that collide with an object which changes the energy state of the photon.  This photon is then reflected off of the object and then enters into the lens of our eye.  From there our brain interpreters this as color.  One problem with this model is that only a very small percent of the emitted light is actually seen, most of the computations are wasted and never used.  A better solution exists in ray tracing.  
+\section{Ray Tracing}
+
+To make a better model we first need to understand how light works.  In the real world light source emit photons that collide with an object which changes the energy state of the photon.  This photon is then reflected off of the object and then enters into the lens of our eye.  From there our brain interpreters this as a color.  One problem with this model is that only a very small percent of the emitted light is actually seen, most of the computations are wasted and never used.  A better solution exists in ray tracing.  
 
 A more efficient way to model realistic light is to trace photons that enter the eye back to sources of light.  Furthermore each photon can be computed independently of each other making ray tracing inherently parallel in nature.  An initial point is used as the light focal point, this is known as the \textit{eye}.  A photon is traced backwards from the eye through an image plane that is in front of the eye.  This image plane acts like film in a pinhole camera.  
 
@@ -185,8 +196,9 @@ Surfaces can be made reflective or refractive by using the recursive nature of r
 \caption{ Ray tracing algorithm with lighting }
 \label{ray-trace-full}
 \end{algorithm}
+\newpage
 
-The images produced with this algorithm produces sharp edges around objects and shadows.  The image is to sharp to be natural, to clean up the image anti aliasing and soft shadows need to be added.  Adding anti aliasing is done by casting more rays through a pixel and averaging the resulting colors together.  To do this the area in space that the pixel covers needs to be subdivided into smaller regions.  A ray is cast from the eye through these regions.  The ray can be cast through the center for a shaper image, or randomly for softer edges.  Anti aliasing can increase the computation cost dramatically.  Splitting a pixel into quarters increases the computation cost by four times.
+The images produced with this algorithm produces sharp edges around objects and shadows.  The resulting image is too sharp to be natural, to clean up the image anti aliasing and soft shadows need to be added.  Adding anti aliasing is done by casting more rays through a pixel and averaging the resulting colors together.  To do this the area in space that the pixel covers needs to be subdivided into smaller regions.  A ray is cast from the eye through these regions.  The ray can be cast through the center for a shaper image, or randomly for softer edges.  Anti aliasing can increase the computation cost dramatically.  Splitting a pixel into quarters increases the computation cost by four times.
 
 \begin{figure}[H]
 \includegraphics[scale=0.6]{aa.png} 
@@ -199,17 +211,30 @@ Soft shadows are used to make a softer transition from light to shadow.     The 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.35]{result1.png} 
-\caption{Non-optimized ray traced image with 8 light, and 80 spheres.  34 minuet render time.}
+\includegraphics[scale=0.25]{result1.png} 
+\caption{Non-optimized ray traced image with 8 light, and 80 spheres.  34 minutes.}
 \label{result1}
 \end{center}
 \end{figure}
 
+\section{Run Time Complexity}
+The runtime of algorithm \ref{ray-trace} can be computed as $O(n^2)$.    The ray trace function iterates over all of the objects in the scene to test for a ray-object collision.  The ray trace function is called for every pixel in the output image.   The algorithm can be improved by using a different data structure the an object light.
+
+The runtime of the full ray tracer algorithm \ref{ray-trace-full} is more complex to compute.  Without the recursive calls, the ray trace function has a $O(n^2 + n^3 )$.  This changes when we allow for recursion.  Each ray can cast 2 more rays up to a max depth.  Without a max depth we could end up with infinite recursion.  This leaves us with a runtime with $O(2kn^2+2kn^3)$.  Adding soft shadows and anti aliasing can make this even more complex.
+
+Using a linear list of objects and lights creates a serious performance hit.  Using a data structure that reduces the number of objects to test for ray-object collisions will give a dramatic performance boost to the algorithm.  
+
+
+\section{Real-time}
+I am proposing to implement a real-time ray tracer.  I will research algorithms and data strictures to reduce the run time of a ray tracer.  I will research techniques in CPU parallelism for algorithms and data structures.  I believe it is possible to speed up the algorithm by either paralleling the ray casting or the collision detection.
+
+Much of the primary research in real-time ray tracing is concentrated around fast ray-object collision testing.  One of the simplest ways to speed this up is by reducing the number of collision tests\cite{kd:2005}.
+Much of this research is about parallel kd-tree ray tracing on the GPU\cite{kd:2007}\cite{fkd:2007}.  I believe much of this research can be applied to fast CPU based kd-tree ray tracing\cite{kd:2006}.
 
 \newpage
 \listofalgorithms
 \listoffigures
-\listoftables
+%\listoftables
 \bibliographystyle{plain}
 \bibliography{proposal}
 
