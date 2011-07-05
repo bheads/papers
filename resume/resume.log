@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  3 JUL 2011 19:22
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  5 JUL 2011 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -173,20 +173,6 @@ Overfull \hbox (6.72351pt too wide) in paragraph at lines 66--98
 [1
 
 {/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
-[]|\OT1/cmr/bx/n/12 Projects
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 100--100
-\OT1/cmr/bx/n/12 and
- []
-
-
-Overfull \hbox (11.34114pt too wide) in paragraph at lines 100--100
-\OT1/cmr/bx/n/12 Recog-ni-tion| 
- []
-
 [2] (./resume.aux) ) 
 Here is how much of TeX's memory you used:
  1207 strings out of 493747
@@ -200,7 +186,7 @@ Here is how much of TeX's memory you used:
 onts/cm/cmbx12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb>
-Output written on resume.pdf (2 pages, 45646 bytes).
+Output written on resume.pdf (2 pages, 45631 bytes).
 PDF statistics:
  23 PDF objects out of 1000 (max. 8388607)
  15 compressed objects within 1 object stream
