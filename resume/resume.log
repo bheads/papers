@@ -1,21 +1,14 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  6 JUL 2011 15:18
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  13 JUL 2011 11:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**resume.tex
-(./resume.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
-rman-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, arabic, armenian
-, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutch, u
-kenglish, usenglishmax, esperanto, estonian, farsi, finnish, french, galician, 
-german, ngerman, swissgerman, monogreek, greek, hungarian, icelandic, assamese,
- bengali, gujarati, hindi, kannada, malayalam, marathi, oriya, panjabi, tamil, 
-telugu, indonesian, interlingua, irish, italian, kurmanji, lao, latin, latvian,
- lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, polish, portuguese, roma
-nian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turkish,
- turkmen, ukrainian, uppersorbian, welsh, loaded.
-(/usr/local/texlive/2010/texmf-dist/tex/latex/base/article.cls
+**\makeatletter\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx"\HCode\def\HCo
+de"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\def\Link#1.a.b.c.
+{\g@addto@macro\@documentclasshook{\RequirePackage[#1,html]{tex4ht}}\let\HCode\
+documentstyle\def\documentstyle{\let\documentstyle\HCode\expandafter\def\csname
+ tex4ht\endcsname{#1,html}\def\HCode####1{\documentstyle[tex4ht,}\@ifnextchar[{
+\HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode .a.b.c.\input  resume.tex
+(./resume.tex (/usr/local/texlive/2010/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
@@ -32,16 +25,30 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/tex4ht.sty
+version 2008-10-27-17:23
+Package: tex4ht 
+--------------------------------------
+--- Note --- for _ at preamble, use the command line option `early_'
+--------------------------------------
+--------------------------------------
+--- Note --- for ^ at preamble, use the command line option `early^'
+--------------------------------------
+\tmp:toks=\toks14
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/usepackage.4ht
+version 2009-05-21-09:32
+)
 (/usr/local/texlive/2010/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/07/13 v5.5 Page Geometry
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks14
+\KV@toks@=\toks15
 )
 (/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2010/01/28 v2.1 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
+Package ifpdf Info: pdfTeX in pdf mode not detected.
 )
 (/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
@@ -58,7 +65,7 @@ Package ifvtex Info: VTeX not detected.
 \Gm@layoutheight=\dimen108
 \Gm@layouthoffset=\dimen109
 \Gm@layoutvoffset=\dimen110
-\Gm@dimlist=\toks15
+\Gm@dimlist=\toks16
 )
 (/usr/local/texlive/2010/texmf-dist/tex/latex/hyphenat/hyphenat.sty
 Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
@@ -75,7 +82,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks16
+\@emptytoks=\toks17
 \ex@=\dimen111
 ))
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -105,21 +112,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \dotsspace@=\muskip10
 \c@parentequation=\count97
 \dspbrk@lvl=\count98
-\tag@help=\toks17
+\tag@help=\toks18
 \row@=\count99
 \column@=\count100
 \maxfields@=\count101
-\andhelp@=\toks18
+\andhelp@=\toks19
 \eqnshift@=\dimen114
 \alignsep@=\dimen115
 \tagshift@=\dimen116
 \tagwidth@=\dimen117
 \totwidth@=\dimen118
 \lineht@=\dimen119
-\@envbody=\toks19
+\@envbody=\toks20
 \multlinegap=\skip44
 \multlinetaggap=\skip45
-\mathdisplay@stack=\toks20
+\mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
@@ -137,7 +144,7 @@ Package: amssymb 2009/06/22 v3.00
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen120
 \extrarowheight=\dimen121
-\NC@list=\toks21
+\NC@list=\toks22
 \extratabsurround=\skip46
 \backup@length=\skip47
 )
@@ -207,7 +214,307 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
-) (./resume.aux)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/tex4ht.4ht
+version 2009-01-07-07:11
+--------------------------------------
+--- Note --- for additional information, use the command line option `info'
+--------------------------------------
+
+::::::::::::::::::::::::::::::::::::::::::
+ TeX4ht info is available in the log file 
+::::::::::::::::::::::::::::::::::::::::::
+) (/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/tex4ht.sty
+version 2008-10-27-17:23
+
+--- needs --- tex4ht resume ---
+\tmp:cnt=\count102
+\openout15 = `resume.tmp'.
+
+(./resume.tmp)
+\tmp:dim=\skip48
+--------------------------------------
+--- Note --- for XML code, use the command line option `xml' or `xhtml'
+--------------------------------------
+ (./resume.xref)
+\:refout=\write3
+\openout3 = `resume.xref'.
+
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- to remove the <?xml version=...?> processing instruction use the c
+ommand line option `no-VERSION'
+--------------------------------------
+--------------------------------------
+--- Note --- to remove the DOCTYPE declaration use the command line option `no-
+DOCTYPE'
+--------------------------------------
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+)
+--------------------------------------
+--- Note --- for marking of the base font, use the command line option `fonts+'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for non active _, use the command line option `no_'
+--------------------------------------
+--------------------------------------
+--- Note --- for _ of catcode 13, use the command line option `_13'
+--------------------------------------
+--------------------------------------
+--- Note --- for non active ^, use the command line option `no^'
+--------------------------------------
+--------------------------------------
+--- Note --- for ^ of catcode 13, use the command line option `^13'
+--------------------------------------
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- for alternative charset, use the command line option `charset=...'
+
+--------------------------------------
+--------------------------------------
+--- Note --- to ignore CSS font decoration, use the `NoFonts' command line opti
+on
+--------------------------------------
+--------------------------------------
+--- Note --- for jpg bitmaps of pictures, use the `jpg' command line option. (C
+haracter bitmaps are controled only by `g' records of tex4ht.env and `-g' switc
+hes of tex4ht.c) 
+--------------------------------------
+--------------------------------------
+--- Note --- for gif bitmaps of pictures, use the `gif' command line option. (C
+haracter bitmaps are controled only by `g' records of tex4ht.env and `-g' switc
+hes of tex4ht.c) 
+--------------------------------------
+--------------------------------------
+--- Note --- for content and toc in 2 frames, use the command line option `fram
+es'
+--------------------------------------
+--------------------------------------
+--- Note --- for content, toc, and footnotes in 3 frames, use the command line 
+option `frames-fn'
+--------------------------------------
+--------------------------------------
+--- Note --- for file extension name xht, use the command line option `xht'
+--------------------------------------
+TeX4ht package options: html
+--------------------------------------
+--- Note --- to ignore CSS code, use the command line option `-css
+--------------------------------------
+--------------------------------------
+--- Note --- for inline CSS code, use the command line option `css-in'
+--------------------------------------
+--------------------------------------
+--- Note --- for pop ups on mouse over, use the command line option `mouseover'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for addressing images in a subdirectory, use the command line opti
+on `imgdir:.../'
+--------------------------------------
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+)
+\:tokwrite=\toks23
+\:tokpage=\toks24
+--------------------------------------
+--- Note --- for back links to toc, use the command line option `sections+'
+--------------------------------------
+--------------------------------------
+--- Note --- for linear crosslinks of pages, use the command line option `next'
+
+--------------------------------------
+\openout15 = `resume.4ct'.
+
+\:tocout=\write4
+\openout4 = `resume.4tc'.
+
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/latex.4ht
+version 2009-05-21-09:32
+--------------------------------------
+--- Note --- for links into captions, instead of float heads, use the command l
+ine option `refcaption'
+--------------------------------------
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- For mini tocs immediately aftter the header use the command line o
+ption `minitoc<'
+--------------------------------------
+--------------------------------------
+--- Note --- for enumerated list elements with valued data, use the command lin
+e option `enumerate+'
+--------------------------------------
+--------------------------------------
+--- Note --- for enumerated list elements li's with value attributes, use the c
+ommand line option `enumerate-'
+--------------------------------------
+--------------------------------------
+--- Note --- for CSS2 code, use the command line option `css2'
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial tabular, use the command line option `pic-tabular'
+--------------------------------------
+--------------------------------------
+--- Note --- for bitmap fbox'es, use the command line option `pic-fbox'
+--------------------------------------
+--------------------------------------
+--- Note --- for bitmap framebox'es, use the command line option `pic-framebox'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for inline footnotes use command line option `fn-in'
+--------------------------------------
+--------------------------------------
+--- Note --- for tracing of latex font commands, use the command line option `f
+onts'
+--------------------------------------
+--------------------------------------
+--- Note --- for width specifications of tabular p entries, use the `p-width' c
+ommand line option or a configuration similar to \Configure{HColWidth}{\HCode{ 
+style="width:\HColWidth"}}
+--------------------------------------
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- for pictorial eqnarray, use the command line option `pic-eqnarray'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial $...$ environments, use the command line option `pic
+-m' (not recommended!!)
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial $...$ and $$...$$ environments with latex alt, use t
+he command line option `pic-m+' (not safe!!)
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/fontmath.4ht
+version 2009-05-21-09:32
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/article.4ht
+version 2009-05-21-09:32
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- for automatic sectioning pagination, use the command line option `
+1', `2', `3', '4', '5', '6', or '7'
+--------------------------------------
+--------------------------------------
+--- Note --- for files named derived from section titles, use the command line 
+option `sec-filename'
+--------------------------------------
+--------------------------------------
+--- Note --- for i-columns index, use the command line option `index=i' (e.g., 
+index=2)
+--------------------------------------
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/amsmath.4ht
+version 2009-05-21-09:32
+\tmp:muskip=\muskip11
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/amstext.4ht
+version 2009-05-21-09:32
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/amsbsy.4ht
+version 2009-05-21-09:32
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/amsopn.4ht
+version 2009-05-21-09:32
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/amsfonts.4ht
+version 2009-05-21-09:32
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/amssymb.4ht
+version 2009-05-21-09:32
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/array.4ht
+version 2009-05-21-09:32
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+))
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2009-05-18-23:01
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2009-05-18-23:01
+))
+(./resume.aux)
 \openout1 = `resume.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
@@ -224,16 +531,15 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 10.
-
-(/usr/local/texlive/2010/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/local/texlive/2010/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 10.
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: dvips
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -244,8 +550,8 @@ LaTeX Font Info:    ... okay on input line 10.
 * \paperheight=845.04684pt
 * \textwidth=460.19423pt
 * \textheight=700.50687pt
-* \oddsidemargin=-14.45378pt
-* \evensidemargin=-14.45378pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
 * \topmargin=-37.0pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -264,6 +570,7 @@ LaTeX Font Info:    ... okay on input line 10.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+--- file resume.css ---
 LaTeX Font Info:    Try loading font information for U+msa on input line 15.
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
@@ -272,56 +579,17 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 15.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-Overfull \hbox (104.04405pt too wide) in alignment at lines 15--19
-[] [] 
- []
+) [1
 
-
-Overfull \hbox (90.88133pt too wide) in paragraph at lines 41--47
-[]|[]| 
- []
-
-
-Overfull \hbox (4.7802pt too wide) in paragraph at lines 28--49
-[][] 
- []
-
-
-Overfull \hbox (32.58827pt too wide) in paragraph at lines 68--88
-[][] 
- []
-
-
-Overfull \hbox (4.7802pt too wide) in paragraph at lines 89--121
-[][] 
- []
-
-[1
-
-{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (20.5953pt too wide) in paragraph at lines 122--130
-[][] 
- []
-
-[2] (./resume.aux) ) 
+] [2]
+(./resume.aux) ) 
 Here is how much of TeX's memory you used:
- 2124 strings out of 493747
- 27721 string characters out of 3143546
- 98887 words of memory out of 3000000
- 5432 multiletter control sequences out of 15000+200000
- 6261 words of font info for 25 fonts, out of 3000000 for 9000
+ 5889 strings out of 493748
+ 69751 string characters out of 3143569
+ 288081 words of memory out of 3000000
+ 9099 multiletter control sequences out of 15000+200000
+ 6429 words of font info for 26 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 27i,15n,22p,223b,168s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmbx12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb>
-Output written on resume.pdf (2 pages, 66096 bytes).
-PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 30i,15n,25p,683b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
 
+Output written on resume.dvi (2 pages, 74412 bytes).
