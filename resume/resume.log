@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  13 JUL 2011 11:29
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=latex 2010.7.21)  6 AUG 2011 10:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7,7 +7,7 @@ de"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\def\Link#1.a.b.c.
 {\g@addto@macro\@documentclasshook{\RequirePackage[#1,html]{tex4ht}}\let\HCode\
 documentstyle\def\documentstyle{\let\documentstyle\HCode\expandafter\def\csname
  tex4ht\endcsname{#1,html}\def\HCode####1{\documentstyle[tex4ht,}\@ifnextchar[{
-\HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode .a.b.c.\input  resume.tex
+\HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode .a.b.c.\input  resume
 (./resume.tex (/usr/local/texlive/2010/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2010/texmf-dist/tex/latex/base/size10.clo
@@ -590,6 +590,6 @@ Here is how much of TeX's memory you used:
  9099 multiletter control sequences out of 15000+200000
  6429 words of font info for 26 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 30i,15n,25p,683b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,15n,25p,679b,435s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on resume.dvi (2 pages, 74412 bytes).
