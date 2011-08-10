@@ -1,0 +1,9 @@
+\section{Real-time}
+I am proposing to implement a real-time ray tracer.  I will research algorithms and data structures to reduce the ray tracer run time.  I will research techniques of CPU parallelism for algorithms and data structures.  I believe it is possible to reduce the algorithms runtime with either parallel ray casting or parallel collision detection.
+
+Much of the research in real-time ray tracing is concentrated around fast ray-object collision testing.  One of the simplest ways to speed this up is by reducing the number of collision tests\cite{kd:2005}.
+Much of this research is about parallel kd-tree ray tracing on the GPU\cite{kd:2007}\cite{fkd:2007}.  I believe much of this research can be applied to fast CPU-based kd-tree ray tracing\cite{kd:2006}.
+
+I plan to design a simple game world to test the ray tracer.  The game world will contain several areas that will test different aspects of the algorithm, as well as areas that will test performance.  The goal of the game world will be to have an $800x600$ screen resolution run at $24$ frames per second.  The test-bed machine will be a $2.2$ GHz Intel Core i7 MacBook Pro with $8GB$ of RAM.  
+
+

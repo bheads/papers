@@ -10,4 +10,4 @@ all: ${SRC}
 	${CC} ${SRC} 
 
 clean:
-	rm -rf *.log *.aux *.pdf *.tex~ *.bbl *.blg *.toc
+	rm -rf *.log *.aux *.pdf *.tex~ *.bbl *.blg *.toc *.dvi *.loa *.lof *.lot

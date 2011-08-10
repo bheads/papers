@@ -1,0 +1,7 @@
+\section{Run Time Complexity}
+The runtime of algorithm \ref{ray-trace} can be computed as $O(n^2)$.    The ray trace function iterates over all objects in the scene to test for a ray-object collision.  The ray trace function is called for every pixel in the output image.   The algorithm can be improved by using a different data structure to store the scene's objects and lights.
+
+The runtime of the full ray tracer algorithm \ref{ray-trace-full} is more complex to compute.  Without recursive calls the ray trace function has a $O(n^2 + n^3 )$.  This changes when we allow for recursion.  Each ray can cast two more rays up to a set maximum depth.  The maximum depth prevents infinite recursion and can control the algorithms performance.  This leaves us with a runtime of $O(2kn^2+2kn^3)$.  Adding soft shadows and anti aliasing can make this even more complex.
+
+Using linear lists of objects and lights creates a serious performance hit.  Using a data structures that reduces the number of objects tested for ray-object collisions will give a dramatic performance boost to the algorithm.
+
