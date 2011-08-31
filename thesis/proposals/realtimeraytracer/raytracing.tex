@@ -6,7 +6,7 @@ Ray tracing model realistic light by tracing photons that enter the eye back the
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.6]{pineholecamera.png} 
+\includegraphics[scale=0.50]{pineholecamera.png} 
 \caption{Pinhole camera}
 \label{pinhole-camera}
 \end{center}
@@ -16,13 +16,13 @@ In a pinhole camera the image is upside down on the film; photons pass through t
 
  \begin{figure}[H]
  \begin{center}
-\includegraphics[scale=0.6]{raycamera.png} 
+\includegraphics[scale=0.50]{raycamera.png} 
 \caption{Ray tracer camera}
 \label{ray-camera}
 \end{center}
 \end{figure}
 
-Algorithm \ref{ray-trace} is a simple implementation producing images similar to the z-buffering algorithm.  The scene consists of a list of geometric objects.  Unlike z-buffering any shaped object can be used.  The image buffer is an array that holds the resulting output colors from the algorithm.  A ray consists of a starting vector and a normalized direction vector.  A ray is created at the eye/starting vector in the direction of each pixel in the image plane.  The pixel is set to the color of the closest object that collides with the ray.  
+The simple ray-tracing algorithm \ref{ray-trace} is a simple implementation that produces images similar to the z-buffering algorithm.  The scene consists of a list of geometric objects.  Unlike z-buffering any shaped object can be used.  The image buffer is an array that holds the resulting output colors from the algorithm.  A ray consists of a starting vector and a normalized direction vector.  A ray is created at the eye/starting vector in the direction of each pixel in the image plane.  The pixel is set to the color of the closest object that collides with the ray.  
 
 \begin{algorithm}[H]
 \begin{algorithmic}[1]
@@ -112,7 +112,12 @@ Refraction is handled in the same way with the exception of the way the refracte
 \end{algorithm}
 \newpage
 
-Images produced with this algorithm tend to have overly sharp edges between objects and shadows, and pixelation.  Anti-aliasing is used to reduce jagged edges and pixelated objects. Soft shadows reduces the sharp transition from light to shadow.
+Images produced with this with the full ray tracing algorithm tend to have overly sharp edges between objects and shadows, and pixelation.  Anti-aliasing is used to reduce jagged edges and pixelated objects. Soft shadows reduces the sharp transition from light to shadow.
+
+%% define AA and pixelation
+Pixelation is the result of low resolution images being displayed at a higher resolution.  Pixelation in a ray tracer is created on edges of objects where a ray is close to hitting the objects edge.  This results in the pixel being a lower resolution then the simulations environment.
+
+Anti-aliasing is a process of reducing the distortion created by representing a higher-resolution image in a lower resolution.  In a ray tracer then simulation environment has a much higher resolution then the resulting image displayed on screen. 
 
 Anti-aliasing is done by casting more rays through a pixel and averaging the resulting colors.  The area in space a pixel occupies is subdivided into smaller regions.  Rays are cast from the eye through these regions.  Rays can be cast through the center for a shaper image, or randomly for softer edges.  Anti-aliasing can increase the computation cost dramatically.  Each new ray can create two new rays for reflection and refraction.
 
@@ -126,7 +131,7 @@ Anti-aliasing is done by casting more rays through a pixel and averaging the res
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.21]{result1.png} 
+\includegraphics[scale=0.25]{result1.png} 
 \caption{Non-optimized ray-traced image with eight light sources, and eighty spheres.  Rendering time was thirty-four minutes .}
 \label{result1}
 \end{center}

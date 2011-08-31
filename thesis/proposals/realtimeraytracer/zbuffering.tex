@@ -1,6 +1,10 @@
 \section{Z-Buffering}
 
-Computer graphics used in modern games and simulation environments that require real time updates to its environment are based around the z-buffering algorithm.  Z-buffering builds a scene by computing the depth of triangles in a scene from a view-point,  known as the eye.  The algorithm is simple and each pixel can be computed with stream processors that are commonly  used on modern GPUs.  Hardware implementations of z-buffers commonly have two frame buffers for color and a depth buffer.    The color buffer is split into the front buffer and the back buffer.  The back buffer is where the algorithm is rendering to, and the front buffer is drawn to the screen.  Once the back buffer is filled it is swapped with the front buffer,  -- normally done with a simple pointer swap.  The algorithm for z-buffer is as follows \cite{fast:2008}:
+Computer graphics used in modern games and simulation environments that require real time updates to its environment are based around the z-buffering algorithm.  Z-buffering builds a scene by computing the depth of triangles in a scene from a view-point,  known as the eye or camera.  The algorithm is simple and each pixel can be computed with stream processors that are commonly  used on modern general processing units or GPUs.  Hardware implementations of z-buffers commonly have two frame buffers, one for color and another for the depth buffer.   
+
+ The color buffer is split into the front buffer and the back buffer.  The back buffer is where the algorithm is rendering to while the front buffer is being drawn to the screen.  Once the back buffer is filled it is swapped with the front buffer,  -- normally done with a simple pointer swap.  The back buffer is initialized to a default color, often black.
+ 
+ The depth buffer is used to track the depth of each pixels color.  This is done be storing the distance from the eye of the triangle that is visible for each pixel.  The depth buffer is filled with the max depth value.  The algorithm for z-buffer is as follows \cite{fast:2008}:
 
 \begin{algorithm}
 \begin{algorithmic}[1]
@@ -21,4 +25,4 @@ Computer graphics used in modern games and simulation environments that require 
 \label{z-buffer}
 \end{algorithm}
 
-This algorithm works by tracking the color depth for each given pixel rendered in the back buffer.  This algorithm is fast and easy to implement.  However light, shadow, reflection, or refraction are not calculated.   Z-buffering only renders from a single point, the eye, but to calculate shadow or reflection the algorithm needs to be able to work from any point in space.  Ray casting is often used to produce these effects.  The solution relies on building a better physics-based model for light.
+The z-buffering algorithm works by tracking the color depth for each given pixel rendered in the back buffer.  This algorithm is fast and easy to implement.  However light, shadow, reflection, and refraction are not calculated.   Z-buffering only renders from a single point, the eye, but to calculate shadow or reflection the algorithm needs to be able to work from any point in space.  Ray casting is often used to produce these effects.  The solution relies on building a better physics-based model for light.

@@ -1,8 +1,8 @@
 \begin{abstract}
 
-The need for higher quality and faster computer rendering has been demanded by many industries since the first CGI images were rendered.  Many different algorithms have been devised over the last few decades but two algorithms have become dominant.  Z-buffering -- the most widely used algorithm -- can render large complex scenes quickly but lacks the ability to render highly realistic lighting.  Ray tracing can produce life-like images with stunning lighting, but more computationally demanding
+The need for higher quality and faster computer rendering has been demanded by many industries since the first CGI images were rendered.  Many different algorithms have been devised over the last few decades with two dominant algorithms emerging.  Z-buffering -- the most widely used algorithm -- can render large complex scenes quickly but lacks the ability to render realistic lighting like shadow and reflections.  Ray tracing can produce life-like images with stunning lighting, but is more computationally demanding and has been limited to off-line rendering.
 
-My proposal is to design and develop a real-time ray tracer using CPU-based parallel processing.  I plan on investigating several data structures to reduce ray collision testing and minimize algorithm runtime.  The algorithm will be tested with a simple game that will demonstrate the engine's capabilities.  I will also explore utilizing SIMD with Intel's SSE instructions, use the GPU, and distributing the work load over several machines on a network.
+I am proposing to design and develop a real-time ray tracer.  I plan on investigating several data structures to reduce ray collision testing and minimize algorithm runtime.  I will also explore utilizing several different parallelism technologies and algorithms.  The algorithm will be tested with a simple game that will demonstrate the engine's capabilities.
 
 \end{abstract}
 \newpage 
