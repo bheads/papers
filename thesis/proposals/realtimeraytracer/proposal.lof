@@ -1,4 +1,4 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Pinhole camera}}{3}
-\contentsline {figure}{\numberline {2}{\ignorespaces Ray tracer camera}}{3}
-\contentsline {figure}{\numberline {3}{\ignorespaces Anti-aliasing for a single pixel.}}{6}
-\contentsline {figure}{\numberline {4}{\ignorespaces Non-optimized ray-traced image with eight light sources, and eighty spheres. Rendering time was thirty-four minutes .}}{7}
+\contentsline {figure}{\numberline {2}{\ignorespaces Ray tracer camera}}{4}
+\contentsline {figure}{\numberline {3}{\ignorespaces Anti-aliasing for a single pixel.}}{7}
+\contentsline {figure}{\numberline {4}{\ignorespaces Non-optimized ray-traced image with eight light sources and eighty spheres. Rendering time was thirty-four minutes.}}{8}
