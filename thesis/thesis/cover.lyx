@@ -400,6 +400,13 @@ status open
 today
 \end_layout
 
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
 \end_inset
 
 
