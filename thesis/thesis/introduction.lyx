@@ -70,12 +70,233 @@ Introduction
 
 \begin_layout Standard
 Research in computer graphics have surged in the last decade under the influence
- of multi-billion dollar industries such as video games, simulation, design,
- research, medical procedures and diagnostics.
+ of multi-billion dollar industries.
+ One of the largest is the entertainment industry.
+ In 2010 video games were a $25 billion dollar industry
+\begin_inset CommandInset citation
+LatexCommand cite
+key "esa-2011"
+
+\end_inset
+
+.
+ simulation, design, research, medical procedures and diagnostics.
  These industries continue to push the need for highly realistic graphics
  generated in real-time.
  Most of this research has been in the development of hardware based rasterizati
-on.
+on, but another rendering algorithm, ray tracing has seen an increase in
+ interest in the last few years.
+ 
+\end_layout
+
+\begin_layout Subsection
+What is Rasterization?
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Rasterization
+\shape default
+ is the most commonly used algorithm in computer graphics.
+\end_layout
+
+\begin_layout Subsection
+What is Ray Tracing?
+\end_layout
+
+\begin_layout Standard
+Ray casting was first described by Arthur Appel
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ray-casting"
+
+\end_inset
+
+ in 1968 as a way to render shadow on solid objects, but this model was
+ limited to basic shadow and solid object rendering.
+ Turner Whitted
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Foley_animproved"
+
+\end_inset
+
+ improved on the ray casting modeling by adding recursive reflections and
+ refraction to the algorithm.
+ The addition of reflections and refractions added a new level of detail
+ giving rise to the ray tracing algorithm.
+ Ray tracing is an optimized algorithm based on the physics of modeling
+ light in three dimensional space.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Physics Based Lighting
+\end_layout
+
+\begin_layout Standard
+In the physical world light sources emit photons, which collide with objects
+ in space which cause a state change in the photon.
+ Some of these photons enter the eye and are interpreted by the brain which
+ creates an image of the world in brain.
+ This process can be modeled by 
+\shape italic
+photon mapping
+\begin_inset CommandInset citation
+LatexCommand cite
+key "digital-lighting-rendering"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Photon mapping spawns billions of light rays from every light source in
+ the scene.
+ Each of these rays are emitted from the light source in random directions,
+ reflecting off of objects changing its energy state.
+ Some of these rays will intersect with the image plan creating and image
+ of the scene being modeled.
+ This results of this algorithm is effect by the number of rays emitted
+ from the light source, and is not effected by the size of the image plane.
+ Adding multiple image planes to a scene has little to no effect on the
+ algorithm, and allows the algorithm to generate multiple images of the
+ scene from different angles.
+ This algorithm is fairly simple to implement and can produce incredible
+ images, but comes at a cost.
+ Computing billions of rays each frame is extremely computationally expensive.
+\end_layout
+
+\begin_layout Subsubsection
+Optimizing Physics
+\end_layout
+
+\begin_layout Standard
+Photon mapping is affected by the number of rays that need to be computed.
+ To optimize this the number of rays needs to be reduced.
+ Ray tracing does this by only computing the rays that hit the image plane,
+ eliminating billions of rays.
+ In order to determine which rays to computed, the algorithm starts at the
+ image plane and works backwards towards a light source.
+ This process can compute a realistic looking image, but not as realistic
+ as photon mapping.
+ Ray tracing is unable to solve the 
+\shape italic
+global illumination 
+\shape default
+problem unlike photon mapping, but this can be faked with the use of a few
+ tricks.
+\end_layout
+
+\begin_layout Subsubsection
+Advantages
+\end_layout
+
+\begin_layout Standard
+Ray tracing has several advantages over rasterization.
+ Ray tracing is based a modeling the physics of light.
+ Because of this ray tracing is able to produce realistic images that have
+ shadow, reflections, refractions, transparent textures, complex geometry,
+ and portals
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ray-trace-gaming-oyl,distributed-ray-tracing"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Many games and simulations include physics and artificial intelligence simulatio
+ns that use the same data structures as a ray tracer, unlike rasterization
+ that use several different data structures for rendering.
+ Using one data structure reduces the complexity of the code, and can be
+ used in other parts of the simulation.
+ For example, a games AI may use the ray tracer to test if an NPC can see
+ the player.
+ The AI can cast several vision rays from the NPC's eyes out into its view
+ direction.
+ Any of the objects hit by this ray is considered in view of the NPC.
+ The view rays can be used to test if the object it intersects with is in
+ shadow, thus creating a dynamic stealth game play mechanic.
+ The player could manipulate the environment to create or move shadows allowing
+ them to move unseen.
+\end_layout
+
+\begin_layout Standard
+Beyond its usage in AI, ray tracers can be used to compute collisions, intersect
+ions, and other physics elements.
+ Ray tracers can handle more complex geometry and are not limited to triangles
+ like rasterization.
+ Cause of this ray tracers can render objects such as spheres, cylinders,
+ cones, or even objects defined by equations.
+ Many of these objects are used by physics engine to quickly test for collision.
+ Further more ray tracers can be used to compute and simulate Newtonian
+ physics.
+\end_layout
+
+\begin_layout Subsubsection
+Disadvantages
+\end_layout
+
+\begin_layout Standard
+Ray tracing simple and complex geometry can require millions of computations
+ for a single frame.
+ The cost of computing a ray traced frame is based on the resolution of
+ the output image, the level of 
+\shape italic
+Anti-Aliasing
+\shape default
+ used, number of objects in the scene, number of lights, and the complexity
+ of 
+\shape italic
+secondary rays
+\shape default
+ in the scene.
+ Using more rays can increase the quality and realism of a simulated environment.
+ Because of this ray tracing has primarily been used for off-line rendering
+ to generate static images, or to pre-render images and videos.
+ Several optimizations can be used to reduces the render time that take
+ advantage of algorithms that can reduce the amount of rays need to compute
+ a scene.
+ These optimizations can make real-time ray tracing a possibility.
+\end_layout
+
+\begin_layout Standard
+Ray tracing is unable to simulate global illumination.
+ Global illumination is illumination that takes into account light transmitted
+ from other objects
+\begin_inset CommandInset citation
+LatexCommand cite
+key "digital-lighting-rendering"
+
+\end_inset
+
+.
+ Ray tracing simulates 
+\shape italic
+local illumintion
+\shape default
+, illumination transmitted directly from a light source.
+ Algorithms such as photon maping, 
+\shape italic
+radiosity
+\shape default
+, and 
+\shape italic
+caustics
+\shape default
+ can be used to compute global illumination, but these algorthims are too
+ computationaly expensive to do in real-time on current hardware.
+ Instead 
+\shape italic
+simulated radiosity
+\shape default
+ can be used to simulte global illumination in real-time.
  
 \end_layout
 
